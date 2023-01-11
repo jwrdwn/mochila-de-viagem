@@ -23,7 +23,7 @@ form.addEventListener('submit', (evento) => {
         atualizaElemento(itemAtual)
         itens[itens.findIndex(elemento => elemento.id === existe.id)] = itemAtual
     } else {
-        itemAtual.id = itens[itens.length - 1] ? (itens[itens.length - 1]).id++ : 0
+        itemAtual.id = itens[itens.length - 1] ? (itens[itens.length - 1]).id + 1 : 0;
         criaElemento(itemAtual)
         itens.push(itemAtual)
     }
@@ -53,7 +53,6 @@ function atualizaElemento(item) {
 
 function deleta(id) {
     const elementoBotao = document.createElement('button')
-
     elementoBotao.innerText = 'X'
 
     elementoBotao.addEventListener('click', function() {
